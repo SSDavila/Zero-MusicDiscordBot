@@ -20,7 +20,7 @@ const client = new Client({
 client.commands = new Collection();
 client.lavalinkManager = new CustomLavalinkManager(client);
 
-// 📂 Cargar comandos
+// Cargar comandos
 const commandFolders = readdirSync(path.join(__dirname, 'commands'));
 for (const folder of commandFolders) {
     const commandFiles = readdirSync(path.join(__dirname, 'commands', folder)).filter(file => file.endsWith('.js'));
@@ -37,7 +37,7 @@ for (const folder of commandFolders) {
     }
 }
 
-// 📂 Cargar eventos
+// Cargar eventos
 const eventFolders = readdirSync(path.join(__dirname, 'events'));
 for (const folder of eventFolders) {
     const eventFiles = readdirSync(path.join(__dirname, 'events', folder)).filter(file => file.endsWith('.js'));
@@ -59,7 +59,6 @@ for (const folder of eventFolders) {
     }
 }
 
-// 🎵 Evento crucial para LavalinkManager
 client.on("raw", d => client.lavalinkManager.sendRawData(d));
 
 client.login(process.env.DISCORD_TOKEN);

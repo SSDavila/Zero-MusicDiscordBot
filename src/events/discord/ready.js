@@ -8,7 +8,6 @@ export default {
     async execute(client) {
         logger.info(`¡${client.user.tag} está listo!`);
 
-        // Inicializar LavalinkManager
         await client.lavalinkManager.init({
             id: client.user.id,
             username: client.user.username,
@@ -18,7 +17,6 @@ export default {
         const rest = new REST({ version: '9' }).setToken(process.env.DISCORD_TOKEN);
         const commands = [];
         
-        // Cargar comandos de la colección del cliente
         client.commands.forEach(command => {
             commands.push(command.data.toJSON());
         });

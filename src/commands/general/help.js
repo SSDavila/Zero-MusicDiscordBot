@@ -1,4 +1,3 @@
-// src/commands/util/help.js
 import { SlashCommandBuilder } from "discord.js";
 
 export default {

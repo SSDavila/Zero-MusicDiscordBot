@@ -1,5 +1,3 @@
-// src/commands/music/play.js
-
 import { SlashCommandBuilder } from 'discord.js';
 import logger from '../../utils/logger.js';
 
@@ -31,7 +29,6 @@ export default {
                 volume: 50,
             });
 
-            // 🔑 Asegurarse de que el bot se conecte al canal
             if (!player.connected) {
                 await player.connect();
             }

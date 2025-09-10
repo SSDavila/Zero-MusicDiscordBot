@@ -1,4 +1,3 @@
-// src/events/lavalink/nodeConnect.js
 export default {
   name: "nodeConnect",
   once: false,
