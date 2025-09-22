@@ -20,7 +20,7 @@ const client = new Client({
 client.commands = new Collection();
 client.lavalinkManager = new CustomLavalinkManager(client);
 
-// Cargar comandos
+// Load Commands
 const commandFolders = readdirSync(path.join(__dirname, 'commands'));
 for (const folder of commandFolders) {
     const commandFiles = readdirSync(path.join(__dirname, 'commands', folder)).filter(file => file.endsWith('.js'));
@@ -37,7 +37,7 @@ for (const folder of commandFolders) {
     }
 }
 
-// Cargar eventos
+// Load Events
 const eventFolders = readdirSync(path.join(__dirname, 'events'));
 for (const folder of eventFolders) {
     const eventFiles = readdirSync(path.join(__dirname, 'events', folder)).filter(file => file.endsWith('.js'));

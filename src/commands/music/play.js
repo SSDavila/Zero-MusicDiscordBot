@@ -21,14 +21,14 @@ export default {
         await interaction.deferReply();
 
         try {
-            const player = await client.lavalinkManager.createPlayer({
-                guildId: guildId,
-                voiceChannelId: channelId,
-                textChannelId: interaction.channel.id,
-                selfDeaf: true,
-                volume: 50,
-            });
-
+            const player = client.lavalinkManager.players.get(guildId) || await client.lavalinkManager.createPlayer({
+                    guildId: guildId,
+                    voiceChannelId: channelId,
+                    textChannelId: interaction.channel.id,
+                    selfDeaf: true,
+                    volume: 50,
+                });
+            
             if (!player.connected) {
                 await player.connect();
             }

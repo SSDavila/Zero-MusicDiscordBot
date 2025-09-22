@@ -17,6 +17,7 @@ export default class CustomLavalinkManager extends LavalinkManager {
 
     super({
       nodes,
+      client,
       sendToShard: (guildId, payload) => {
         const guild = client.guilds.cache.get(guildId);
         if (guild) guild.shard.send(payload);
